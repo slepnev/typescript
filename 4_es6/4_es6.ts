@@ -14,3 +14,14 @@ console.log("DESTRUCTURING");
 const myHobbiies = ["Cooking", "Sports"];
 const [hobby1, hobby2] = myHobbiies;
 console.log(hobby1, hobby2);
+
+const userData = {userName: "Max", age: 23};
+const {age: myAge, userName} = userData;
+console.log(userName, myAge);
+
+// Template literals
+const myName = "Max";
+const greeting = `
+  I'm ${myName}, 
+  This is cool.`;
+console.log(greeting);

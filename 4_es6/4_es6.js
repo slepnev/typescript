@@ -16,3 +16,10 @@ console.log("DESTRUCTURING");
 var myHobbiies = ["Cooking", "Sports"];
 var hobby1 = myHobbiies[0], hobby2 = myHobbiies[1];
 console.log(hobby1, hobby2);
+var userData = { userName: "Max", age: 23 };
+var myAge = userData.age, userName = userData.userName;
+console.log(userName, myAge);
+// Template literals
+var myName = "Max";
+var greeting = "\n  I'm " + myName + ", \n  This is cool.";
+console.log(greeting);
