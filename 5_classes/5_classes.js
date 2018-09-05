@@ -1,7 +1,10 @@
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10,10 +13,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Person = /** @class */ (function () {
     function Person(name, username) {
-        this.name = name;
-        this.username = username;
         this.age = 22;
         this.name = name;
+        this.username = username;
     }
     Person.prototype.printAge = function () {
         console.log(this.age);
@@ -25,9 +27,9 @@ var Person = /** @class */ (function () {
     };
     return Person;
 }());
-var person = new Person("Max", "max");
-console.log(person.name, person.username);
-person.printAge();
+var person1 = new Person("Max", "max");
+console.log(person1.name, person1.username);
+person1.printAge();
 // person.setType("Cool guy"); // Won't work with private method
 // Inheritance
 var Max = /** @class */ (function (_super) {
@@ -85,6 +87,7 @@ console.log(2 * Helpers.calcCircumference(8));
 var Project = /** @class */ (function () {
     function Project() {
         this.projectName = "Default";
+        this.budget = 100;
     }
     Project.prototype.calcBudget = function () {
         return this.budget * 2;
@@ -102,3 +105,23 @@ var ITProject = /** @class */ (function (_super) {
     return ITProject;
 }(Project));
 var newProject = new ITProject();
+console.log(newProject);
+newProject.changeName("ChangeName");
+console.log(newProject);
+// SINGLETON private constructors
+var OnlyOne = /** @class */ (function () {
+    function OnlyOne(name) {
+        this.name = name;
+    }
+    OnlyOne.getInstance = function () {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('The Only One');
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+// let wrong = new OnlyOne('The Only One');
+var right = OnlyOne.getInstance();
+console.log(right.name);
+// right.name = 'Something else';

@@ -1,9 +1,12 @@
 class Person {
   private type: string;
   protected age: number = 22;
+  public name: string;
+  public username: string;
 
-  constructor(public name: string, public username: string) {
+  constructor(name: string, username: string) {
     this.name = name;
+    this.username = username;
   }
 
   printAge() {
@@ -17,9 +20,9 @@ class Person {
   }
 }
 
-const person = new Person("Max", "max");
-console.log(person.name, person.username);
-person.printAge();
+const person1 = new Person("Max", "max");
+console.log(person1.name, person1.username);
+person1.printAge();
 // person.setType("Cool guy"); // Won't work with private method
 
 // Inheritance
@@ -72,7 +75,7 @@ console.log(2 * Helpers.calcCircumference(8));
 // Abstract Classes
 abstract class Project {
   projectName: string = "Default";
-  budget: number;
+  budget: number = 100;
 
   abstract changeName(name: string): void;
 
@@ -88,3 +91,29 @@ class ITProject extends Project {
 }
 
 let newProject = new ITProject();
+console.log(newProject);
+newProject.changeName("ChangeName");
+console.log(newProject);
+
+// SINGLETON private constructors
+class OnlyOne {
+  private static instance: OnlyOne;
+  public readonly name: string;
+
+  private constructor(name: string) {
+    this.name =  name;
+  }
+
+  static getInstance() {
+    if(!OnlyOne.instance) {
+      OnlyOne.instance = new OnlyOne('The Only One');
+    }
+    return OnlyOne.instance;
+  }
+}
+
+// let wrong = new OnlyOne('The Only One');
+let right = OnlyOne.getInstance();
+console.log(right.name);
+// right.name = 'Something else';
+
