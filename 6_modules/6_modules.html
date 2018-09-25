@@ -7,19 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Learning TypeScript</title>
   <script src="../node_modules/systemjs/dist/system.js"></script>
-  <script>
-    SystemJS.config({
-      baseURL: './',
-      defaultJSExtensions: true
-    });
-
-    SystemJS.import('6_modules.js');
-  </script>
-  <script src="circleMath.js"></script>
-  <script src="rectangleMath.js"></script>
-  <script src="6_modules.js"></script>
-  <script src="solutions.js"></script>
 </head>
 <body>
+<script>
+  SystemJS.config({
+    baseURL: './',
+    packages: {
+      '.': {
+        defaultExtension: 'js',
+      }
+    },
+  });
+
+  SystemJS.import('6_modules.js');
+</script>
 </body>
 </html>
