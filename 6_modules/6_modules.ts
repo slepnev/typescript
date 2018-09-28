@@ -9,7 +9,9 @@ console.log('NAMESPACE');
 
 console.log('MODULES');
 
-import { PI, calculateCirumcumference } from './math/circle';
-console.log(PI);
-console.log(calculateCirumcumference(3));
+import * as Circle from './math/circle';
+import calculateRectangle from './math/rectangle'
+console.log(Circle.PI);
+console.log(Circle.calculateCirumcumference(3));
+console.log(calculateRectangle(10, 2));
 
