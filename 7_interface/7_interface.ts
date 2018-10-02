@@ -6,7 +6,7 @@ interface NamedPerson {
   greet(lastName: string): void;
 }
 
-function greet(person: NamedPerson) {
+function greet2(person: NamedPerson) {
   console.log('Hello, ' + person.firstName);
 }
 
@@ -24,13 +24,13 @@ const person: NamedPerson = {
 };
 
 person.greet('Anna');
-greet(person);
+greet2(person);
 changeName(person);
-greet(person);
+greet2(person);
 
 
 // Class
-class Person implements NamedPerson{
+class Person2 implements NamedPerson{
   firstName: string;
   lastName: string;
   age?: number;
@@ -39,10 +39,10 @@ class Person implements NamedPerson{
     console.log('Hi, I am ' + this.firstName + ' ' + lastName);
   };
 }
-const myPerson = new Person();
+const myPerson = new Person2();
 myPerson.firstName = 'Maximilian';
 myPerson.lastName = 'Anything';
-greet(myPerson);
+greet2(myPerson);
 myPerson.greet(myPerson.lastName);
 
 
@@ -51,8 +51,7 @@ interface DoubleValueFunc {
   (number1: number, number2: number): number;
 }
 
-const myDoubleFunction: DoubleValueFunc;
-myDoubleFunction = function (value1: number, value2: number) {
+const myDoubleFunction: DoubleValueFunc = function (value1: number, value2: number) {
   return (value1 + value2) * 2;
 };
 
