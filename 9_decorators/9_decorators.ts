@@ -35,14 +35,25 @@ const plant3 = new Plant3();
 (<any>plant3).print();
 
 
-// Method Decorators
+// Method Decorator
+// Property Decorator
 function editable(value: boolean) {
   return function (target: any, propName: string, descriptor: PropertyDescriptor) {
     descriptor.writable = value;
   }
 }
 
+function overwritable(value: boolean) {
+  return function (target: any, propName: string) {
+    const newDescriptor: PropertyDescriptor = {
+      writable: value
+    };
+    return newDescriptor;
+  }
+}
+
 class Project3 {
+  @overwritable(false)
   projectName: string;
 
   constructor(name: string) {
@@ -61,3 +72,4 @@ project3.calcBudget = function () {
   console.log(2000);
 };
 project3.calcBudget();
+console.log(project3);
