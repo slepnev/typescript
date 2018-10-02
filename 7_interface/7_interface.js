@@ -1,4 +1,4 @@
-function greet(person) {
+function greet2(person) {
     console.log('Hello, ' + person.firstName);
 }
 function changeName(person) {
@@ -13,26 +13,25 @@ var person = {
     }
 };
 person.greet('Anna');
-greet(person);
+greet2(person);
 changeName(person);
-greet(person);
+greet2(person);
 // Class
-var Person = /** @class */ (function () {
-    function Person() {
+var Person2 = /** @class */ (function () {
+    function Person2() {
     }
-    Person.prototype.greet = function (lastName) {
+    Person2.prototype.greet = function (lastName) {
         console.log('Hi, I am ' + this.firstName + ' ' + lastName);
     };
     ;
-    return Person;
+    return Person2;
 }());
-var myPerson = new Person();
+var myPerson = new Person2();
 myPerson.firstName = 'Maximilian';
 myPerson.lastName = 'Anything';
-greet(myPerson);
+greet2(myPerson);
 myPerson.greet(myPerson.lastName);
-var myDoubleFunction;
-myDoubleFunction = function (value1, value2) {
+var myDoubleFunction = function (value1, value2) {
     return (value1 + value2) * 2;
 };
 console.log(myDoubleFunction(10, 20));
