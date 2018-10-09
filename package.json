@@ -9,12 +9,21 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.3.12",
-    "lite-server": "^2.2.2"
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "lite-server": "^2.2.2",
+    "ts-loader": "^5.2.1",
+    "typescript": "^3.1.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server",
-    "tsc": "tsc -w"
+    "tsc": "tsc -w",
+    "build:gulp": "gulp",
+    "build:webpack": "webpack-cli",
+    "build:webpack:prod": "webpack -d"
   },
   "author": "",
   "license": "ISC"
