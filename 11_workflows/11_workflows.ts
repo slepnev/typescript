@@ -1,7 +1,7 @@
 // Typescript workflows
-import "jQuery";
+import $ = require('jquery');
 
 // Testing gulp watch npm run build
-$('#app').css({"background-color": "red"});
+$('#app').css({"background-color": "blue"});
 
 
