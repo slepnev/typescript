@@ -1,20 +1,16 @@
 module.exports = {
-  entry: "./12_reactjs/12_reactjs.ts",
+  entry: "./11_workflows/11_workflows.ts",
   output: {
     filename: "bundle.js"
-  },
-  devtool: "souece-map",
-  resolve: {
-    extensions: ["", ".ts", ".tsx", ".js"]
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         exclude: [/node_modules/],
         loader: "ts-loader",
         options: {
-          configFile: "tsconfig.reactjs.json"
+          configFile: "tsconfig.webpack.json"
         }
       }
     ]

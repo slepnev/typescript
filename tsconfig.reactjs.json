@@ -3,6 +3,6 @@
     "target": "es5",
     "noImplicitAny": false,
     "experimentalDecorators": true,
-    "baseUrl": "11_workflows"
+    "baseUrl": "12_reactjs"
   }
 }
