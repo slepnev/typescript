@@ -3,6 +3,8 @@
     "target": "es5",
     "noImplicitAny": false,
     "experimentalDecorators": true,
-    "baseUrl": "12_reactjs"
+    "baseUrl": "12_reactjs",
+    "sourceMap": true,
+    "jsx": "react"
   }
 }
